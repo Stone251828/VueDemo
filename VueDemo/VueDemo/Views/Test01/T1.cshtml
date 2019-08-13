@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "T1";
+}
+
+<h1>T1</h1>
+
+<div id="root">
+    <div>
+        <input v-model="inputValue" />
+        <button v-on:click="handleClick"> 提交</button>
+    </div>
+    <ul>
+        <li v-for="(item,index) of list" :key="index"> 
+            {{item}}
+        </li>
+    </ul>
+ 
+</div>
+
+@section Scripts{
+
+    <script src="~/lib/vue/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#root",
+            data: {
+                inputValue: '',
+                list:[]
+            },
+            methods: {
+                handleClick: function () {
+                    this.list.push(this.inputValue)
+                    this.inputValue=''
+                }
+            }
+        })
+    </script>
+
+}

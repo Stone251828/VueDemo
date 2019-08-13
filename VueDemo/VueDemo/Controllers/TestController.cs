@@ -6,9 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace VueDemo.Controllers
 {
-    public class Test01Controller : Controller
+    public class TestController : Controller
     {
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult T1()
         {
             return View();
         }
